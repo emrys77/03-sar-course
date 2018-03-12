@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+     type: '',
      counter: 0,
      questionId: 1,
      question: '',
