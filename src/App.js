@@ -2,8 +2,24 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Question from './components/Question';
+import Text from './components/Text';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+     counter: 0,
+     questionId: 1,
+     question: '',
+     answerOptions: [],
+     answer: '',
+     correct: '',
+     result: ''
+    };
+  }
+
   render() {
     return (
       <div className="App">
