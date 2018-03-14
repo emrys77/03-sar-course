@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DataStore from './flux/DataStore.js';
+
 import Question from './components/Question';
 import Text from './components/Text';
+
 
 class App extends Component {
 
@@ -22,6 +25,12 @@ class App extends Component {
   }
 
   render() {
+    let allPages = DataStore.getAllPages();
+    console.log(allPages);
+
+    let allQuestions = DataStore.getAllQuestions();
+    console.log(allQuestions);
+        
     return (
       <div className="App">
         <header className="App-header">
@@ -35,3 +44,4 @@ class App extends Component {
 }
 
 export default App;
+
