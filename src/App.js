@@ -4,7 +4,7 @@ import './App.css';
 
 //import DataStore from './flux/DataStore.js';
 
-import GetData from './components/GetData3.js';
+import SARCourse from './components/GetData4.js';
 
 import Question from './components/Question';
 import Text from './components/Text';
@@ -37,12 +37,16 @@ class App extends Component {
     return (
       
       <div className="App">
-        <div className="DataHolder"></div>
+       
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
         </header>
         <Question content="Who is most likely to commit an armed robbery?" />
+
+        <SARCourse></SARCourse>
+
+        
       </div>
  
     );
@@ -50,7 +54,7 @@ class App extends Component {
 
 }
 
-GetData();
+
 
 export default App;
 
