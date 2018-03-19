@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
-const urlForUsername = username =>
-  `https://api.github.com/users/${username}`
 
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 
-class SARCourse extends Component {
+class MyAppChild extends React.Component {
+  render() {
+    return <li>{this.props.key + ':' + this.props.label + " - " + this.props.value}</li>;
+  }
+}  
+  class SARCourse extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -39,15 +42,17 @@ class SARCourse extends Component {
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.SARData) return <p>Loading...</p>
    
+    var json = this.state.SARData;
+    var arr = [];
+    Object.keys(json).forEach(function(key) {
+      arr.push(json[key]);
+    });
     return (
-      <div>
-        <h2>{JSON.stringify(this.state.SARData)}</h2>
-       
-
-      </div>
+      <ul>{arr.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul>
     )
   }
 }
+
 
 export default SARCourse;
 
