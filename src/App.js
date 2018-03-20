@@ -8,6 +8,8 @@ import SARCourse from './components/GetData4.js';
 
 import Question from './components/Question';
 import Text from './components/Text';
+//import LearningCheck from './components/LearningCheck';
+import Video from './components/Video';
 
 
 class App extends Component {
@@ -16,14 +18,14 @@ class App extends Component {
     super(props);
 
     this.state = {
-     type: '',
-     counter: 0,
-     questionId: 1,
-     question: '',
-     answerOptions: [],
-     answer: '',
-     correct: '',
-     result: ''
+      type: '',
+      counter: 0,
+      questionId: 1,
+      question: '',
+      answerOptions: [],
+      answer: '',
+      correct: '',
+      result: ''
     };
   }
 
@@ -33,7 +35,14 @@ class App extends Component {
 
  //   let allQuestions = DataStore.getAllQuestions();
  //   console.log(allQuestions);
-        
+  
+ 
+
+        //<LearningCheck intro="move stuff around brochacho" options={['me','myself','I']} />
+
+   //     <SARCourse></SARCourse>
+
+
     return (
       
       <div className="App">
@@ -44,9 +53,8 @@ class App extends Component {
         </header>
         <Question content="Who is most likely to commit an armed robbery?" />
 
-        <SARCourse></SARCourse>
+        <Video vimeo_code="182642621" video_intro_text="Video intro text" />
 
-        
       </div>
  
     );
