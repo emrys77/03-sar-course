@@ -8,9 +8,9 @@ import './App.css';
 import SARCourse from './components/GetData4.js';
 
 import Question from './components/Question';
-import Text from './components/Text';
-import LearningCheck from './components/LearningCheck';
-import Video from './components/Video';
+import Text from './components/Text/Text';
+import LearningCheck from './components/LearningCheck/LearningCheck';
+import Video from './components/Video/Video';
 
 
 class App extends Component {

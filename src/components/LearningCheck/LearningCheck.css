@@ -1,0 +1,30 @@
+.wrapper {
+    display: table;
+    margin:0px auto;
+    
+}
+.container {
+    display: table-cell;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 50%;
+    margin:0px auto;
+}
+.container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.container ul > li {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+.container ul > li, .gu-mirror {
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease-in-out;
+}

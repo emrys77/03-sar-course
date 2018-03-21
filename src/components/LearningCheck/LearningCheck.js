@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import dragula from 'react-dragula';
 //import '../../node_modules/dragula/dist/dragula.css';
-import styles from "../../node_modules/dragula/dist/dragula.css";
+import styles from "../../../node_modules/dragula/dist/dragula.css";
+import styles2 from './LearningCheck.css';
 //import styles from '../../node_modules/dragula/example/example.css';
 
 
@@ -43,16 +44,24 @@ class LearningCheck extends React.Component {
         return ( 
             <div className="LearningCheck">
                 <p>{this.props.intro}</p>
-                <div Id="first">
-                <div>Swap me around</div>
-                <div>Swap them around</div>
-                <div>Swap the world around</div>
-            </div>
-            <div Id="second">
-                <div>Swap us around</div>
-                <div>Swap things around</div>
-                <div>Swap everything around</div>
-            </div>
+                <div className="wrapper">
+                    <div className="container">
+                        <h2>the heading</h2>
+                        <ul Id="first">
+                            <li>Swap me around</li>
+                            <li>Swap them around</li>
+                            <li>Swap the world around</li>
+                        </ul>
+                    </div>
+                    <div className="container">
+                        <h2>the other heading</h2>
+                        <ul Id="second">
+                            <li>Swap me around</li>
+                            <li>Swap them around</li>
+                            <li>Swap the world around</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     };
