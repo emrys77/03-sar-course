@@ -32,46 +32,16 @@ var LearningCheck = React.createClass({
       });
     }
   });
-*/
 
-class LearningCheck extends React.Component {
-    static propTypes = {
-        intro: PropTypes.string.isRequired,
-        options: PropTypes.array
-    };
-    
-    render() {
-        return ( 
-            <div className="LearningCheck">
-                <p>{this.props.intro}</p>
-                <div className="wrapper">
-                    <div className="container">
-                        <h2>the heading</h2>
-                        <ul Id="first">
-                            <li>Swap me around</li>
-                            <li>Swap them around</li>
-                            <li>Swap the world around</li>
-                        </ul>
-                    </div>
-                    <div className="container">
-                        <h2>the other heading</h2>
-                        <ul Id="second">
-                            <li>Swap me around</li>
-                            <li>Swap them around</li>
-                            <li>Swap the world around</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        );
-    };
-    componentDidMount () {
-        console.log('mounted!');
-        dragula([document.getElementById('first'), document.getElementById('second')], {
-            revertOnSpill: true
-        });
-    }
-}
+  var items = props.options;
+    var itemsList = items.map(function(item){
+      //  return <li>{item}</li>;
+      //      return <radio Id="Q3" label={item} />;
+            return <label className="radioBox"><input type="radio" name="Q3" value={item} />{item}</label>
+
+      })
+
+*/
 
 function shuffle(arr) {
     var i,
@@ -85,6 +55,50 @@ function shuffle(arr) {
     }
     return arr;    
 };
+
+class LearningCheck extends React.Component {
+    static propTypes = {
+        intro: PropTypes.string.isRequired,
+        box1hd: PropTypes.string.isRequired,
+        box2hd: PropTypes.string.isRequired,
+        options: PropTypes.array
+    };
+
+    items = this.props.options;
+    
+    itemsList = this.items.map(function(item){
+        return <div>{item}</div>
+    })
+    
+    render() {
+        return ( 
+            <div className="LearningCheck">
+                <p>{this.props.intro}</p>
+                <div className="wrapper">
+                    <div className="container" Id="first">
+                        <h2>{this.props.box1hd}</h2>
+                       
+                    </div>
+                    <div className="container" Id="second">
+                        <h2>{this.props.box2hd}</h2>
+                        
+                    </div>
+                    <div className="container pen" Id="third">
+                    { this.itemsList }
+                    </div>
+                </div>
+            </div>
+        );
+    };
+    componentDidMount () {
+        console.log('mounted!');
+        dragula([document.getElementById('first'), document.getElementById('second'), document.getElementById('third')], {
+            revertOnSpill: true
+        });
+    }
+}
+
+
 
 /* 
 var half_length = Math.ceil(arrayName.length / 2);    

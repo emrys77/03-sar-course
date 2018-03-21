@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import styles from '../node_modules/dragula/dist/dragula.css';
-
-//import DataStore from './flux/DataStore.js';
 
 import SARCourse from './components/GetData4.js';
 
@@ -32,18 +29,6 @@ class App extends Component {
   }
 
   render() {
- //   let allPages = DataStore.getAllPages();
- //   console.log(allPages);
-
- //   let allQuestions = DataStore.getAllQuestions();
- //   console.log(allQuestions);
-  
- 
-
-        //<LearningCheck intro="move stuff around brochacho" options={['me','myself','I']} />
-
-   //     <SARCourse></SARCourse>
-
 
     return (
       
@@ -54,9 +39,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
         </header>
         
+        <SARCourse />
+          
         <MultipleChoice question="who is the best?" options={['me','myself','I','Emrys']} />
 
-        <LearningCheck intro="move stuff around brochacho" options={['me','myself','I']} />
+        <LearningCheck intro="move stuff around brochacho" box1hd="Soft Targets" box2hd="Hard Targets" options={['me','move me', 'change the world', 'myself','I']} />
 
         <Text content="Who is most likely to commit an armed robbery?" />
 
@@ -69,7 +56,4 @@ class App extends Component {
 
 }
 
-
-
 export default App;
-

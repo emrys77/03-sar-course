@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 
 class MyAppChild extends React.Component {
   render() {
-    return <li>{this.props.key + ':' + this.props.label + " - " + this.props.value}</li>;
+    return <div>{this.props.key + ':' + this.props.label + " - " + this.props.value}</div>;
   }
 }  
   class SARCourse extends Component {

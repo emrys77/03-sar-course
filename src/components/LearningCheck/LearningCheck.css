@@ -1,26 +1,32 @@
 .wrapper {
-    display: table;
+    display: block;
     margin:0px auto;
     
 }
 .container {
-    display: table-cell;
+    display: inline-block;
     background-color: rgba(255, 255, 255, 0.2);
-    width: 50%;
-    margin:0px auto;
-}
-.container ul {
-    list-style-type: none;
-    padding-left: 0;
+    width: 45.5%;
+    min-height: 300px;
+    margin:10px;
+    border: 1px solid #bbb;
+    vertical-align: top;
 }
 
-.container ul > li {
+.container.pen {
+    width: 100%;
+}
+.container .pen div {
+    width: auto;
+}
+.container div {
+    display: block;
     cursor: move;
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
 }
-.container ul > li, .gu-mirror {
+.container div, .gu-mirror {
     margin: 10px;
     padding: 10px;
     list-style-type: none;
