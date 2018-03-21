@@ -10,6 +10,7 @@ import SARCourse from './components/GetData4.js';
 import Question from './components/Question';
 import Text from './components/Text/Text';
 import LearningCheck from './components/LearningCheck/LearningCheck';
+import MultipleChoice from './components/MultipleChoice/MultipleChoice';
 import Video from './components/Video/Video';
 
 
@@ -53,9 +54,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
         </header>
         
+        <MultipleChoice question="who is the best?" options={['me','myself','I','Emrys']} />
+
         <LearningCheck intro="move stuff around brochacho" options={['me','myself','I']} />
 
-        <Question content="Who is most likely to commit an armed robbery?" />
+        <Text content="Who is most likely to commit an armed robbery?" />
 
         <Video vimeo_code="182642621" video_intro_text="Video intro text" />
 
