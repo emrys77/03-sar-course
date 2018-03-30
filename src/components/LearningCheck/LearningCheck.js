@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import dragula from 'react-dragula';
 //import '../../node_modules/dragula/dist/dragula.css';
 import styles from "../../../node_modules/dragula/dist/dragula.css";
@@ -75,15 +74,15 @@ class LearningCheck extends React.Component {
             <div className="LearningCheck">
                 <p>{this.props.intro}</p>
                 <div className="wrapper">
-                    <div className="container" Id="first">
+                    <div className="container" id="first">
                         <h2>{this.props.box1hd}</h2>
                        
                     </div>
-                    <div className="container" Id="second">
+                    <div className="container" id="second">
                         <h2>{this.props.box2hd}</h2>
                         
                     </div>
-                    <div className="container pen" Id="third">
+                    <div className="container pen" id="third">
                     { this.itemsList }
                     </div>
                 </div>

@@ -6,7 +6,7 @@ function Video(props) {
     <div className="video">
         <div className="video_intro_text">{props.video_intro_text}</div>
         <div className="flex-video widescreen vimeo">
-            <iframe title="vimeoPlayer" src={ `https://player.vimeo.com/video/${props.vimeo_code}` }width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+            <iframe title="vimeoPlayer" src={ `https://player.vimeo.com/video/${props.vimeo_code}` }width="500" height="281" frameBorder="0" webkitallowfullscreen="" mozallowfullscreen="" allowFullScreen=""></iframe>
  	    </div>
     </div>
   );
@@ -14,7 +14,7 @@ function Video(props) {
 
 
 Video.propTypes = {
-  vimeo_code: PropTypes.number,
+  vimeo_code: PropTypes.string,
   video_intro_text: PropTypes.string.isRequired
 };
 

@@ -7,7 +7,8 @@ class MyAppChild extends React.Component {
     return <div>{this.props.key + ':' + this.props.label + " - " + this.props.value}</div>;
   }
 }  
-  class SARCourse extends Component {
+
+class SARCourse extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -27,7 +28,7 @@ class MyAppChild extends React.Component {
       .then(d => d.json())
       .then(d => {
         this.setState({
-          SARData: d
+          SARdata: d
         })
       }, () => {
         this.setState({
@@ -36,23 +37,26 @@ class MyAppChild extends React.Component {
       })
   }
 
+
   render() {
 
     if (this.state.requestFailed) return <p>Failed!</p>
-    if (!this.state.SARData) return <p>Loading...</p>
+    if (!this.state.SARdata) return <p>Loading...</p>
    
     var json = this.state.SARData;
-    var arr = [];
+    var SARarray = [];
+
     Object.keys(json).forEach(function(key) {
-      arr.push(json[key]);
+      SARarray.push(json[key]);
     });
+
     return (
-      <ul>{arr.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul>
-    )
+     <ul>{SARarray.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul> 
+
+    ) 
   }
+
 }
 
 
-export default SARCourse;
-
-
+export default SARCourse

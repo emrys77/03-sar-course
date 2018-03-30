@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Text(props) {
   return  (
-    <div class="text">
+    <div className="text">
       <h2 className="title">{props.title}</h2>
       <div className="content">{props.content}</div>
     </div>
@@ -11,7 +11,7 @@ function Text(props) {
 }
 
 Text.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   content: PropTypes.string.isRequired
 };
 

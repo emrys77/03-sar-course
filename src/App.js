@@ -3,13 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 import SARCourse from './components/GetData4.js';
-
-import Question from './components/Question';
 import Text from './components/Text/Text';
 import LearningCheck from './components/LearningCheck/LearningCheck';
 import MultipleChoice from './components/MultipleChoice/MultipleChoice';
 import Video from './components/Video/Video';
 
+import Question from './components/Question';
 
 class App extends Component {
 
@@ -17,28 +16,17 @@ class App extends Component {
     super(props);
 
     this.state = {
-      type: '',
-      counter: 0,
-      questionId: 1,
-      question: '',
-      answerOptions: [],
-      answer: '',
-      correct: '',
-      result: ''
+      questionNo: 1,
     };
   }
+/*
 
-  render() {
+get state question number
+get corresponding data
+run react component of question type supply props
 
-    return (
-      
-      <div className="App">
+
        
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
-        </header>
-        
         <SARCourse />
           
         <MultipleChoice question="who is the best?" options={['me','myself','I','Emrys']} />
@@ -48,6 +36,33 @@ class App extends Component {
         <Text content="Who is most likely to commit an armed robbery?" />
 
         <Video vimeo_code="182642621" video_intro_text="Video intro text" />
+
+
+
+responseArray = SARCourse.state.SARData;
+courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
+
+*/
+
+
+
+render() {
+
+  
+ /*       <Question number= { this.state.questionNo }  /> */
+    return (
+      
+      <div className="App">
+       
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
+        </header>
+
+
+
+        <Question number= { this.state.questionNo } json={ SARCourse.SARarray }  />
+
 
       </div>
  
