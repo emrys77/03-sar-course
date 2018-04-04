@@ -16,6 +16,21 @@ class SARCourse extends Component {
     }
   }
 
+/*
+
+  componentDidMount: function() {
+    var _this = this;
+    this.serverRequest = 
+      axios
+        .get("http://codepen.io/jobs.json")
+        .then(function(result) {    
+          _this.setState({
+            jobs: result.data.jobs
+          });
+        })
+
+*/
+
   componentDidMount() {
     fetch(apiUrl)
       .then(response => {
@@ -25,7 +40,6 @@ class SARCourse extends Component {
 
         return response
       })
-
       .then(d => d.json())
       .then(d => {
         this.setState({
@@ -35,9 +49,9 @@ class SARCourse extends Component {
         this.setState({
           requestFailed: true
         })
-      }
-    )
+      })
   }
+
   
   render() {
 
@@ -50,13 +64,17 @@ class SARCourse extends Component {
     Object.keys(json).forEach(function(key) {
       SARarray.push(json[key]);
     });
+
+   
+      return (
+          
+        /* <ul>{SARarray.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul> */
+
+        <div key={this.question.id}>
+          {this.question.title.rendered} 
+          {this.question.acf.type}
+        </div>
+      )
     
-    return (
-      <div>
-        <ul>{SARarray.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul>
-      </div>
-    )
-  }
-}
 
 export default SARCourse;

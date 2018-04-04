@@ -59,10 +59,7 @@ render() {
           <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
         </header>
 
-
-
-        <Question number= { this.state.questionNo } json={ SARCourse.SARarray }  />
-
+        <Question number= { this.state.questionNo } json={ SARCourse }  />
 
       </div>
  
