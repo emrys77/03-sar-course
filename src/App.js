@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import SARCourse from './components/GetData4.js';
+import SARCourse from './components/GetData5.js';
+
 import Text from './components/Text/Text';
 import LearningCheck from './components/LearningCheck/LearningCheck';
 import MultipleChoice from './components/MultipleChoice/MultipleChoice';
@@ -17,6 +18,7 @@ class App extends Component {
 
     this.state = {
       questionNo: 1,
+      data: SARCourse
     };
   }
 /*
@@ -45,12 +47,16 @@ courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
 */
 
 
-
 render() {
+  console.log('I was triggered during render')
 
-  
- /*       <Question number= { this.state.questionNo }  /> */
-    return (
+  console.log( SARCourse )
+
+ /*       <Question number= { this.state.questionNo }  /> 
+ <Question number= { this.state.questionNo } json={ SARCourse }  />*/
+
+ 
+ return (
       
       <div className="App">
        
@@ -59,7 +65,9 @@ render() {
           <h1 className="App-title">Welcome to the Survive Armed Robbery course</h1>
         </header>
 
-        <Question number= { this.state.questionNo } json={ SARCourse }  />
+        <SARCourse />
+        
+         <Question number= { this.state.questionNo } json={ this.state.data }  />
 
       </div>
  

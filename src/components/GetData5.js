@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 
-class MyAppChild extends React.Component {
-  render() {
-    return <div>{this.props.key + ':' + this.props.label + " - " + this.props.value}</div>;
-  }
-}  
-
 class SARCourse extends Component {
   constructor(props) {
     super(props)
@@ -15,21 +9,6 @@ class SARCourse extends Component {
       requestFailed: false
     }
   }
-
-/*
-
-  componentDidMount: function() {
-    var _this = this;
-    this.serverRequest = 
-      axios
-        .get("http://codepen.io/jobs.json")
-        .then(function(result) {    
-          _this.setState({
-            jobs: result.data.jobs
-          });
-        })
-
-*/
 
   componentDidMount() {
     fetch(apiUrl)
@@ -43,7 +22,7 @@ class SARCourse extends Component {
       .then(d => d.json())
       .then(d => {
         this.setState({
-          SARdata: d
+          SARData: d
         })
       }, () => {
         this.setState({
@@ -52,29 +31,19 @@ class SARCourse extends Component {
       })
   }
 
-  
   render() {
 
     if (this.state.requestFailed) return <p>Failed!</p>
-    if (!this.state.SARdata) return <p>Loading...</p>
+    if (!this.state.SARData) return <p>Loading...</p>
    
-    var json = this.state.SARdata;
-    var SARarray = [];
+    return (
+      <div>
+        {JSON.stringify(this.state.SARData)}
+      </div>
+    )
+  }
+}
 
-    Object.keys(json).forEach(function(key) {
-      SARarray.push(json[key]);
-    });
+export default SARCourse
 
-   
-      return (
-          
-        /* <ul>{SARarray.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul> */
 
-        <div key={this.question.id}>
-          {this.question.title.rendered} 
-          {this.question.acf.type}
-        </div>
-      )
-    
-
-export default SARCourse;

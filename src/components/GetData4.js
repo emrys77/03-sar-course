@@ -38,7 +38,12 @@ class SARCourse extends Component {
       }
     )
   }
-  
+  /*        
+  <ul>{SARarray.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul>
+  Object.keys(json).forEach(function(key) {
+      SARarray.push(json[key]);
+    });
+*/
   render() {
 
     if (this.state.requestFailed) return <p>Failed!</p>
@@ -53,7 +58,7 @@ class SARCourse extends Component {
     
     return (
       <div>
-        <ul>{SARarray.map(item => <MyAppChild key={item.id} label={item.title.rendered} value={item.acf.type} />)}</ul>
+        {SARarray}
       </div>
     )
   }

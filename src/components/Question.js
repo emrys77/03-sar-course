@@ -24,7 +24,7 @@ function Question(props) {
 
 Question.propTypes = {
   number: PropTypes.number.isRequired,
-  json: PropTypes.string
+  json: PropTypes.any
 };
 
 export default Question;
