@@ -10,6 +10,7 @@ function getQuestionData( responseArray, questionNumber ) {
         .find( item => item.acf.question_number === 1 );
 }
 
+
 /* var myQuestion = getQuestionData( questionData,1); */
 
 function Question(props) {

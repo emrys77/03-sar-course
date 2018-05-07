@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import SARCourse from './components/GetData5.js';
+import SARCourse from './components/GetData6.js';
 
 import Text from './components/Text/Text';
 import LearningCheck from './components/LearningCheck/LearningCheck';

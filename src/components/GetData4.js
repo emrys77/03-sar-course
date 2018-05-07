@@ -4,7 +4,7 @@ const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page
 
 class MyAppChild extends React.Component {
   render() {
-    return <div>{this.props.key + ':' + this.props.label + " - " + this.props.value}</div>;
+    return <div>{this.props.id + ':' + this.props.title + " - " + this.props.date_gmt}</div>;
   }
 }  
 
@@ -65,3 +65,5 @@ class SARCourse extends Component {
 }
 
 export default SARCourse;
+
+//export default MyAppChild;
