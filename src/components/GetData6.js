@@ -50,8 +50,7 @@ class SARCourse extends Component {
       });
       
       return (
-        <div>
-          {SARarray.SARCourse.id}
+        <div>emrys
         </div>
       )
     }

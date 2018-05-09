@@ -67,7 +67,6 @@ render() {
 
         <SARCourse />
         
-         <Question number= { this.state.questionNo } json={ this.state.data }  />
 
       </div>
  
