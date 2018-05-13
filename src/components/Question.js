@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import SARCourse from './GetData4.js';
 
 
-/* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); */
+/* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); 
 
 function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
         .find( item => item.acf.question_number === 1 );
 }
-
+*/
 
 /* var myQuestion = getQuestionData( questionData,1); */
 
